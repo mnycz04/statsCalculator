@@ -14,7 +14,7 @@ def find_mean(events_list):
         mean_of_event = events_list[cur_event][0] * events_list[cur_event][1]
         mean_of_events += mean_of_event
 
-    return mean_of_events
+    return round(mean_of_events, 5)
 
 
 def find_variance(mean, event_list):
@@ -23,10 +23,10 @@ def find_variance(mean, event_list):
     variance = 0
 
     for j in range(len(event_list)):
-        current_variance = (event_list[i][0] - mean) ** 2 * event_list[i][1]
+        current_variance = ((event_list[j][0] - mean) ** 2) * event_list[j][1]
         variance += current_variance
 
-    return variance
+    return round(variance, 5)
 
 
 while 1:
@@ -73,7 +73,7 @@ while 1:
 
     events_mean = find_mean(events)
     events_variance = find_variance(events_mean, events)
-    events_std_deviation = events_variance ** .5
+    events_std_deviation = round(events_variance ** .5, 5)
 
     print(f'\nMean = {events_mean}')
     print(f'Variance = {events_variance}')
