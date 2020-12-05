@@ -18,4 +18,5 @@ while 1:
     events_base = []
 
     for i in range(points):
+        pass
 
